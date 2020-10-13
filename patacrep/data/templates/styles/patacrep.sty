@@ -150,6 +150,7 @@
 \newsongkey{album}{\let\songalbum\@empty}{\def\songalbum{#1}}
 \newsongkey{url}{\let\songurl\@empty}{\def\songurl{#1}}
 \newsongkey{original}{\let\songoriginal\@empty}{\def\songoriginal{#1}}
+\newsongkey{date}{\let\songdate\@empty}{\def\songdate{#1}}
 
 % Insert cover pictures
 \newcommand\cover{%
@@ -169,6 +170,9 @@
     {\footnotesize\it\songalbum}
     \IfStrEq{\songurl}{}{}{
         \href{\songurl}{\includegraphics[width=.3cm]{img/internet}}
+    }
+    \IfStrEq{\songdate}{}{}{
+      {\bfseries \normalsize \songdate}
     }
 }
 
