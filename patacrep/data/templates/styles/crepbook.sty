@@ -211,7 +211,9 @@
   \renewcommand{\chorusfont}{\it}
   \renewcommand{\lyricfont}{\normalfont\normalsize}
   \renewcommand{\showauthors}{%
-      \hbox{\normalsize\songauthors}%
+%      \hbox{\normalsize\songauthors}%
+      \setbox\SB@box\hbox{\normalsize\bfseries\sfcode`.\@m\songauthors}%
+    \ifdim\wd\SB@box>\z@\unhbox\SB@box\par\fi%
   }
 \fi
 
